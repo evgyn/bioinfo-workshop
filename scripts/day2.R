@@ -180,6 +180,11 @@ markers_named |> group_by(cluster_cell_type) |> slice_max(avg_log2FC, n = 2, wit
   select(cluster_cell_type, gene, avg_log2FC, pct.1, pct.2, p_val_adj)
 
 
+#SAVE
+saveRDS(pbmc, "results/pbmc3k_annotated.rds")
+file.size("results/pbmc3k_annotated.rds") / 1e6
+
+
 
 
 
